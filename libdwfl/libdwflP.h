@@ -114,7 +114,7 @@ struct Dwfl
 {
   const Dwfl_Callbacks *callbacks;
 #ifdef ENABLE_LIBDEBUGINFOD
-  debuginfod_client *debuginfod;
+  struct debuginfod_client *debuginfod;
 #endif
   Dwfl_Module *modulelist;    /* List in order used by full traversals.  */
 
@@ -652,7 +652,7 @@ __libdwfl_debuginfod_find_debuginfo (Dwfl *dwfl,
 				     const unsigned char *build_id_bits,
 				     size_t build_id_len);
 void
-__libdwfl_debuginfod_end (debuginfod_client *c);
+__libdwfl_debuginfod_end (struct debuginfod_client *c);
 #endif
 
 

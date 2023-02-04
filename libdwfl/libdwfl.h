@@ -49,9 +49,6 @@ typedef struct Dwfl_Thread Dwfl_Thread;
    PC location described by an FDE belonging to Dwfl_Thread.  */
 typedef struct Dwfl_Frame Dwfl_Frame;
 
-/* Handle for debuginfod-client connection.  */
-typedef struct debuginfod_client debuginfod_client;
-
 /* Callbacks.  */
 typedef struct
 {
@@ -813,7 +810,7 @@ int dwfl_frame_reg (Dwfl_Frame *state, unsigned regno, Dwarf_Word *val)
    first call to this function. If elfutils is compiled without support for debuginfod,
    NULL will be returned.
  */
-extern debuginfod_client *dwfl_get_debuginfod_client (Dwfl *dwfl);
+extern struct debuginfod_client *dwfl_get_debuginfod_client (Dwfl *dwfl);
 
 #ifdef __cplusplus
 }

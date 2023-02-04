@@ -143,7 +143,7 @@ __libdwfl_debuginfod_init (void)
 
 #else // ENABLE_LIBDEBUGINFOD
 
-debuginfod_client *
+struct debuginfod_client *
 dwfl_get_debuginfod_client (Dwfl *dummy __attribute__ ((unused)))
 {
   return NULL;
