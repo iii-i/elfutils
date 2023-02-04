@@ -44,6 +44,7 @@ void print_version (FILE *stream, struct argp_state *state);
   void (*const apvh) (FILE *, struct argp_state *) \
    __asm ("argp_program_version_hook")
 #define ARGP_PROGRAM_BUG_ADDRESS_DEF \
-  const char *const apba__ __asm ("argp_program_bug_address")
+  const char *const apba__ __asm ("argp_program_bug_address") \
+  __attribute__ ((used))
 
 #endif // PRINTVERSION_H
