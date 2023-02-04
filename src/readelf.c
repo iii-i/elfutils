@@ -12206,6 +12206,7 @@ handle_bit_registers (const Ebl_Register_Location *regloc, const void *desc,
 		      unsigned int colno)
 {
   desc += regloc->offset;
+  (void)desc;
 
   abort ();			/* XXX */
   return colno;
