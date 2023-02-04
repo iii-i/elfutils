@@ -43,17 +43,16 @@
 /* Memory for the default pattern.  The type uses a flexible array
    which does work well with a static initializer.  So we play some
    dirty tricks here.  */
-static const struct
+static const union
 {
   struct FillPattern pattern;
-  char zero;
+  char zeroes[sizeof(struct FillPattern) + 1];
 } xdefault_pattern =
   {
     .pattern =
     {
       .len = 1
     },
-    .zero = '\0'
   };
 const struct FillPattern *__libasm_default_pattern = &xdefault_pattern.pattern;
 
