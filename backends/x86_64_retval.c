@@ -106,6 +106,8 @@ x86_64_return_value_location (Dwarf_Die *functypedie, const Dwarf_Op **locp)
     case DW_TAG_enumeration_type:
     case DW_TAG_pointer_type:
     case DW_TAG_ptr_to_member_type:
+    case DW_TAG_reference_type:
+    case DW_TAG_rvalue_reference_type:
       {
 	Dwarf_Attribute attr_mem;
 	if (dwarf_formudata (dwarf_attr_integrate (typedie, DW_AT_byte_size,
